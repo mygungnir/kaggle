@@ -1,0 +1,16 @@
+{
+    "contents" : "remove_column <- function(data, col_names){\n  return(data[,!(names(data) %in% col_names)]);\n}\n\nreplace_in_data <- function(data, col, before, after){\n  levels(col) <- c(levels(col), after)\n  col[col==before] <- after\n  data$new_col <- col\n  return(data)\n}\n\nreplace_in_data_with_regex <- function(data, col, before, after){\n  col <- sapply(col,gsub,pattern= before, replacement=after)\n  data$new_col <- col\n  return(data)\n}\n\nadd_01_columns <- function(data, original_col, map){\n  \n}",
+    "created" : 1369557643742.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "488420365",
+    "id" : "61697F17",
+    "lastKnownWriteTime" : 1369557651,
+    "path" : "~/kaggle/myfunctions.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
