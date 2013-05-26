@@ -1,0 +1,7 @@
+dat <- read.csv("data/train.csv")
+dat<-remove_column(dat,c("name","ticket"))
+dat <- add_01_columns(dat, "embarked")
+dat <- replace_in_data(dat,"sex","male",0)
+dat <- replace_in_data(dat,"sex","female",1)
+dat <- remove_column(dat, "embarked")
+dat <- replace_in_data_with_regex(dat,"cabin","[[:digit:]]+","")
